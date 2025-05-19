@@ -9,7 +9,7 @@ AdminPortal is a Laravel-based sample admin portal project.
 
 ## Installation
 1. Clone the repository:
-   git clone https://github.com/yourusername/adminportal.git
+   git clone https://github.com/dhananjayranipuram/adminportal.git
 
 2. cd adminportal
 
