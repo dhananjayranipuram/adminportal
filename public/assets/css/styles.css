@@ -1,0 +1,48 @@
+form {
+        width: 400px;
+        margin: 30px auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+    label, input, select {
+        display: block;
+        width: 100%;
+        margin-bottom: 12px;
+    }
+    button {
+        padding: 10px;
+        width: 100%;
+    }
+
+    .header-bar{
+        background-color: orange;
+    }
+
+    .side-bar{
+        background-color: skyblue;
+        height: 100%;
+    }
+    .side-bar a {
+        display: block;
+        margin: 10px 0;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 15px;
+    }
+
+    table, th, td {
+        border: 1px solid #ccc;
+    }
+
+    th {
+        background-color: #f2f2f2;
+        padding: 10px;
+    }
+
+    td {
+        padding: 8px;
+    }
