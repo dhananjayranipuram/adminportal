@@ -3,7 +3,11 @@
 @section('content')
 
 <h2 style="text-align: center;">Create Customer</h2>
-
+@if(request('success'))
+    <div class="alert alert-success">
+        {{ request('success') }}
+    </div>
+@endif
 <form id="customerForm">
     <label>Name*:</label>
     <input type="text" name="name" required><br><br>
@@ -21,6 +25,6 @@
 </form>
 
 <div id="message"></div>
-<script src="{{ asset('assets/js/add_customers.js') }}"></script>
+<script src="{{ asset('assets/js/add_customers.js') }}?v={{ time() }}"></script>
 
 @endsection

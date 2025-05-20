@@ -6,6 +6,7 @@ use App\Models\Customer;
 use App\Models\Invoice;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Validation\Rule;
 
 class DataController extends Controller
 {
@@ -20,10 +21,10 @@ class DataController extends Controller
 
         switch ($type) {
             case 'customer':
-                return response()->json(Customer::all());
+                return response()->json(Customer::orderBy('id')->get());
                 break;
             case 'invoice':
-                $invoices = Invoice::with('customer')->get();
+                $invoices = Invoice::with('customer')->orderBy('id')->get();
                 return response()->json($invoices);
                 break;
             default:
@@ -38,13 +39,13 @@ class DataController extends Controller
 
         switch ($type) {
             case 'customer':
-                $request->validate([
+                $validate = $request->validate([
                     'name' => 'required|string',
                     'email' => 'required|email|unique:customers,email',
                     'phone' => 'nullable|digits:10',
                     'address' => 'nullable|string',
                 ]);
-
+                // echo '<pre>';print_r($validate);exit;
                 $customer = Customer::create([
                     'name' => $request->name,
                     'phone' => $request->phone,
@@ -81,14 +82,18 @@ class DataController extends Controller
 
         switch ($type) {
             case 'customer':
-                $request->validate([
+                $validate = $request->validate([
                     'id' => 'required|exists:customers,id',
                     'name' => 'required|string',
-                    'phone' => 'nullable|string',
-                    'email' => 'required|email|unique:customers,email',
+                    'phone' => 'nullable|digits:10',
+                    'email' => [
+                            'required',
+                            'email',
+                            Rule::unique('customers', 'email')->ignore($request->input('id')),
+                        ],
                     'address' => 'nullable|string',
                 ]);
-            
+                // echo '<pre>';print_r($validate);exit;
                 $customer = Customer::findOrFail($request->input('id'));
 
                 $customer->update([

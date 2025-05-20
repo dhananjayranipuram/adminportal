@@ -23,6 +23,7 @@ $(document).ready(function() {
                 if(result.id) {
                     // $('#message').html("<p style='color: green'>Customer created with ID: " + result.id + "</p>");
                     // $('#customerForm')[0].reset();
+                    alert("Customer created with ID: " + result.id);
                     window.location.href = baseEditUrl;
                 } else {
 

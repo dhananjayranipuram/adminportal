@@ -11,7 +11,7 @@
     </select>
 
     <label for="date">Date</label>
-    <input type="date" id="date" name="date" required>
+    <input type="date" id="date" name="date" required max="{{ date('Y-m-d') }}">
 
     <label for="amount">Amount</label>
     <input type="number" id="amount" name="amount" required>
@@ -25,5 +25,5 @@
 
     <button type="submit">Create Invoice</button>
 </form>
-<script src="{{ asset('assets/js/add_invoice.js') }}"></script>
+<script src="{{ asset('assets/js/add_invoice.js') }}?v={{ time() }}"></script>
 @endsection

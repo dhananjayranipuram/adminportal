@@ -17,7 +17,7 @@
         </thead>
         <tbody></tbody>
     </table>
-    <script src="{{ asset('assets/js/customers.js') }}"></script>
+    <script src="{{ asset('assets/js/customers.js') }}?v={{ time() }}"></script>
     
 
 

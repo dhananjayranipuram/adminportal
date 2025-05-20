@@ -36,7 +36,7 @@ $(document).ready(function () {
             data: JSON.stringify(data),
             success: function (res) {
                 alert('Invoice created successfully!');
-                $('#invoiceForm')[0].reset();
+                window.location.href = baseUrl+'/invoice';
             },
             error: function (xhr) {
                 alert('Error creating invoice.');

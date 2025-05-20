@@ -20,6 +20,7 @@ $('#editInvoiceForm').on('submit', function (e) {
         data: JSON.stringify(data),
         success: function (res) {
             alert(res.message);
+            window.location.href = baseUrl+'/invoice';
         },
         error: function(xhr) {
 

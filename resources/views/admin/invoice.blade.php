@@ -20,5 +20,5 @@
     </tbody>
 </table>
 
-<script src="{{ asset('assets/js/invoice_list.js') }}"></script>
+<script src="{{ asset('assets/js/invoice_list.js') }}?v={{ time() }}"></script>
 @endsection

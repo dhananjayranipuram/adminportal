@@ -18,7 +18,7 @@ $.ajax({
             data.forEach(function(invoice) {
                 row += `<tr>
                         <td>${invoice.id}</td>
-                        <td>${invoice.customer.name}</td>
+                        <td>${invoice.customer?invoice.customer.name:''}</td>
                         <td>${invoice.date}</td>
                         <td>${invoice.amount}</td>
                         <td>${invoice.status}</td>

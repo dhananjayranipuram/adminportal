@@ -11,7 +11,7 @@
     <input type="text" name="name" id="name" value="{{ $customer->name }}" required><br>
 
     <label>Phone:</label>
-    <input type="text" name="phone" phone="phone" value="{{ $customer->phone }}"><br>
+    <input type="text" name="phone" id="phone" value="{{ $customer->phone }}"><br>
 
     <label>Email:</label>
     <input type="email" name="email" id="email" value="{{ $customer->email }}"><br>
@@ -23,6 +23,6 @@
 </form>
 
 <div id="message"></div>
-<script src="{{ asset('assets/js/customer_edit.js') }}"></script>
+<script src="{{ asset('assets/js/customer_edit.js') }}?v={{ time() }}"></script>
 
 @endsection

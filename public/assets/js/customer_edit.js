@@ -1,3 +1,4 @@
+var baseEditUrl = baseUrl+'/customers';
 $('#editCustomerForm').on('submit', function (e) {
     e.preventDefault();
 
@@ -20,6 +21,7 @@ $('#editCustomerForm').on('submit', function (e) {
         data: JSON.stringify(data),
         success: function (res) {
             alert(res.message);
+            window.location.href = baseEditUrl;
         },
         error: function(xhr) {
 
