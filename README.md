@@ -14,7 +14,7 @@ AdminPortal is a Laravel-based sample admin portal project.
 2. cd adminportal
 
 3. Install dependencies
-   composer install
+   "composer install"
 
 4. cp .env.example .env
 
@@ -26,9 +26,10 @@ AdminPortal is a Laravel-based sample admin portal project.
     DB_PASSWORD
 
 6. Run Migration of database
-   php artisan migrate
+   "php artisan migrate"
 
 7. Seed the Database for login info
+   "php artisan make:seeder AdminSeeder"
    I have added seed for admin login as below, if needed you can change it as required
    User name:admin
    Password:Admin@123
